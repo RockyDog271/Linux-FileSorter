@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#Variables used for configuration
+
+#This is the Directory where files will be pulled from
+ParentDir="$HOME/Downloads"
+
+#This is the Directory where files will be moved to
+ChildDir="$HOME/Downloads_Archive"
+
+#This is the Directory where logging will be outputted
+FileLogs="$HOME/Downloads_Archive/FileSortLogs"
+
+#Directory Lists (This will all go into "ChildDir")
+Folders=(
+    "Homework"
+    "AuthKeys"
+    "Screenshots"
+    "Videos"
+    "Audio"
+    "Images"
+    "Documents"
+    "ISOs"
+    "Miscellaneous"
+    "Unsorted"
+    "Folders"
+)
+
+#Folder ruleset (unsorted files and folders do not have rulesets)
+FolderRules=(
+    '*"Logan Simila"*|*"Case Project"*|*"Case_Project"*|*"Hands On"*|*"Hands_on"*|*"Module "*'    #Homework
+    '*.ppk|*.pem|*.rdp|*.ssh|*.ssh2|*.key|*.pub|*.crt|*.cer|*.p12|*.pfx|*krl'                     #AuthKeys
+    '*"Screenshot"*|*"screenshot"*'                                                               #Screenshots
+    '*"Screencapture"*|*"screencapture"*|*"ScreenCapture"*|*"screenCapture"*|*"Screen_Capture"*|*"screen_capture"*|\
+        *.mp4|*.mkv|*.avi|*.mov|*.wmv|*.flv|*.webm|*.mpeg|*.mpg|*.3gp|*.3g2|*"ScreenRecording"*|*"screenrecording"*)'              #Videos
+    '*.mp3|*.wav|*.flac|*.aac|*.ogg|*.wma|*.m4a|*.opus|*.aiff|*.alac|*"sound"*|*"audio"*|*"music"*|*"recording"*|*"Recording"*'    #Audio
+    '*.png|*.jpg|*.jpeg|*.gif|*.bmp|*.tiff|*.webp|*.svg|*.avif|*.JPEG|*.JPG|*"wallpaper"*|*"art"*|*"image"*|*"photo"*|*"picture"*' #Images
+    '*.pdf|*.doc|*.docx|*.txt|*.csv|*.xls|*.xlsx|*.ppt|*.pptx|*.odt|*.ods|*.odp|*"document"*|\
+        *"file"*|*"text"*|*"spreadsheet"*|*"presentation"*|*"report"*|*"Report"*'                                                  #Documents
+    '*.iso|*.img|*.dmg|*.bin|*.cue|*.nrg|*.toast|*.vcd|*"iso"*|*"image"*|*"disk"*|*"diskimage"*|*"virtualmachine*"|\
+       *.VMDK|*.VMDK|*.VHD|*.VHDX|*.QCOW2|*.QCOW|*"virtualdisk"*|*"virtualdiskimage"*|*"virtualmachineimage"*'                     #ISOs
+    '*.jar|*.gz|*.zip|*.tar|*.tar.gz|*.tar.bz2|*.tar.xz|*.tar.lz|*.tar.lzo|*.tar.lzma|*.tar.lzop|*.tar.zst|\
+    *.tar.lz4|*.tar.lzop|*.tar.lzip|*.tar.lzma|*.tar.lzo|*.tar.xz|*.tar.zstd|*.tar.zst|*.tar.zlib|*.tar.zlib1c'                    #Miscellaneous
+)
