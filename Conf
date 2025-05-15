@@ -24,6 +24,7 @@ Folders=(
     "Miscellaneous"
     "Unsorted"
     "Folders"
+    "Archive"
 )
 
 #Folder ruleset (unsorted files and folders do not have rulesets)

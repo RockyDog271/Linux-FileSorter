@@ -1,0 +1,9 @@
+#! /bin/bash
+ScriptFullPath='$HOME/GitHub/Linux-FileSorter/Conf.sh'
+
+source "$ScriptFullPath"
+
+#This creates folders if they do not exist
+for SubFolder in "${Folders[@]}"; do
+    mkdir -p "$ChildDir/$SubFolder"
+done

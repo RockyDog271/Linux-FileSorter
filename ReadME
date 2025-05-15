@@ -1,0 +1,7 @@
+Welcome to Linux FileSorter (Version Unknown)
+
+!Important
+Inside of Main, Line 2, you need to set the full path that the program is in
+(Default: ScriptFullPath='$HOME/GitHub/Linux-FileSorter')
+
+Inside of Conf, you can set custom files and custom rules for when you sort those files
