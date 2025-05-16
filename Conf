@@ -2,14 +2,16 @@
 
 #Variables used for configuration
 
-#This is the Directory where files will be pulled from
+#This is the Directorys where files will be pulled from
 ParentDir="$HOME/Downloads"
+ScreenShotsDir="$HOME/Pictures"
+ScreenCapturesDir="$HOME/Videos"
 
 #This is the Directory where files will be moved to
-ChildDir="$HOME/Downloads_Archive"
+ChildDir="$HOME/Archive"
 
 #This is the Directory where logging will be outputted
-FileLogs="$HOME/Downloads_Archive/FileSortLogs"
+FileLogs="$HOME/Archive/FileSortLogs"
 
 #Directory Lists (This will all go into "ChildDir")
 Folders=(
@@ -25,9 +27,10 @@ Folders=(
     "Unsorted"
     "Folders"
     "Archive"
+    "Games"
 )
 
-#Folder ruleset (unsorted files and folders do not have rulesets)
+#Folder ruleset (unsorted files, folders, and xxxxx do not have rulesets)
 FolderRules=(
     '*"Logan Simila"*|*"Case Project"*|*"Case_Project"*|*"Hands On"*|*"Hands_on"*|*"Module "*'    #Homework
     '*.ppk|*.pem|*.rdp|*.ssh|*.ssh2|*.key|*.pub|*.crt|*.cer|*.p12|*.pfx|*krl'                     #AuthKeys
@@ -42,4 +45,5 @@ FolderRules=(
        *.VMDK|*.VMDK|*.VHD|*.VHDX|*.QCOW2|*.QCOW|*"virtualdisk"*|*"virtualdiskimage"*|*"virtualmachineimage"*'                     #ISOs
     '*.jar|*.gz|*.zip|*.tar|*.tar.gz|*.tar.bz2|*.tar.xz|*.tar.lz|*.tar.lzo|*.tar.lzma|*.tar.lzop|*.tar.zst|\
     *.tar.lz4|*.tar.lzop|*.tar.lzip|*.tar.lzma|*.tar.lzo|*.tar.xz|*.tar.zstd|*.tar.zst|*.tar.zlib|*.tar.zlib1c'                    #Miscellaneous
+    '*"Game"*|*"game"*|*"Games"*'                                                                                                  #Games
 )

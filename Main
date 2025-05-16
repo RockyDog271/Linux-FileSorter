@@ -1,9 +1,14 @@
 #! /bin/bash
-ScriptFullPath='$HOME/GitHub/Linux-FileSorter/Conf.sh'
+ScriptFullPath="$HOME/GitHub/Linux-FileSorter/Conf.sh"
 
+bash "$ScriptFullPath"
 source "$ScriptFullPath"
 
-#This creates folders if they do not exist
+#This creates the main folders if they do not exist
+mkdir -p "$ParentDir" "$ChildDir" "$FileLogs"
+
+#This creates sub-folders if they do not exist
 for SubFolder in "${Folders[@]}"; do
     mkdir -p "$ChildDir/$SubFolder"
 done
+
