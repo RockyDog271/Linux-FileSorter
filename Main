@@ -1,14 +1,30 @@
 #! /bin/bash
-ScriptFullPath="$HOME/GitHub/Linux-FileSorter/Conf.sh"
+ScriptFullPath="$HOME/GitHub/Linux-FileSorter/Conf"
 
-bash "$ScriptFullPath"
+#bash "$ScriptFullPath"
 source "$ScriptFullPath"
 
 #This creates the main folders if they do not exist
 mkdir -p "$ParentDir" "$ChildDir" "$FileLogs"
+
+
 
 #This creates sub-folders if they do not exist
 for SubFolder in "${Folders[@]}"; do
     mkdir -p "$ChildDir/$SubFolder"
 done
 
+for file in "$ParentDir/*"; do
+    Filename=$(basename "$file")
+    for ((array=0; array<${#FolderRules[@]}; array++)); do
+        Rule="${FolderRules[array]}"
+        Folder="$Folders[array]"
+
+        case "$Filename" in
+            $Rule)
+                mv "$file" "$ChildDir/$Folder"
+                continue 2
+                ;;
+        esac
+    done
+done

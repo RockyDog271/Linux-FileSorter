@@ -28,6 +28,7 @@ Folders=(
     "Folders"
     "Archive"
     "Games"
+    ...
 )
 
 #Folder ruleset (unsorted files, folders, and xxxxx do not have rulesets)
@@ -45,5 +46,6 @@ FolderRules=(
        *.VMDK|*.VMDK|*.VHD|*.VHDX|*.QCOW2|*.QCOW|*"virtualdisk"*|*"virtualdiskimage"*|*"virtualmachineimage"*'                     #ISOs
     '*.jar|*.gz|*.zip|*.tar|*.tar.gz|*.tar.bz2|*.tar.xz|*.tar.lz|*.tar.lzo|*.tar.lzma|*.tar.lzop|*.tar.zst|\
     *.tar.lz4|*.tar.lzop|*.tar.lzip|*.tar.lzma|*.tar.lzo|*.tar.xz|*.tar.zstd|*.tar.zst|*.tar.zlib|*.tar.zlib1c'                    #Miscellaneous
-    '*"Game"*|*"game"*|*"Games"*'                                                                                                  #Games
+    '*"Game"*|*"game"*|*"Games"*'                                                                                                  #Games                            
+    ...
 )
